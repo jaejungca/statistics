@@ -6,9 +6,10 @@ x = c(1,0,1,1,0,0) # x= baby cried
 ## Estimated model (prediction): yhat = b0hat + b1hatx
 ## Estimated model (prediction): yhat = 2 + 4x
 ## H0: b0 = 0; t = b0hat/se 
-## H0: b1 = 0;
+## H0: b1 = 0; t = b1hat/se
 lm <- lm(y~x)
 typeof(lm)
+class(lm)
 summary(lm)
 
 # R-squared Illustration
