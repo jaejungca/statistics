@@ -97,7 +97,8 @@ View(error)
 
 ## Unbiased part
 
-II = 100000 # number of different samples
+set.seed(100)
+II = 10000 # number of different samples
 N = 30 # sample size
 beta0 = 1 # true value in population
 beta1 = 2 # true value in population
