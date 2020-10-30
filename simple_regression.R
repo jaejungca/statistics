@@ -123,30 +123,30 @@ beta0 = 1
 beta1 = 2
 beta0mat = matrix(0,II,1)
 beta1mat = matrix(0,II,1)
-sebeta0mat = matrix(0,II,1) # se of beta0 hat; standard error = unbiased estimate of SD; sqrt of var_hat
-sebeta1mat = matrix(0,II,1) # se of beta1 hat
+sr_Var_beta0mat = matrix(0,II,1) # se of beta0 hat; standard error = unbiased estimate of SD; sqrt of var_hat
+sr_Var_beta1mat = matrix(0,II,1) # se of beta1 hat
 for (i in 1:II) {
   x = rnorm(N,0,2)
   e = rnorm(N,0,1)
   y = beta0 + beta1*x + e
   beta0mat[i] = summary(lm(y~x))$coefficients[1,1]
   beta1mat[i] = summary(lm(y~x))$coefficients[2,1]
-  sebeta0mat[i] = summary(lm(y~x))$coefficients[1,2]
-  sebeta1mat[i] = summary(lm(y~x))$coefficients[2,2]
+  sr_Var_beta0mat[i] = summary(lm(y~x))$coefficients[1,2]
+  sr_Var_beta1mat[i] = summary(lm(y~x))$coefficients[2,2]
 }
 
 sqrt(var(beta0mat)) #sd of beta0 hat; var = (yi-Y_bar)^2/n-1
-mean(sebeta0mat) # average of se of beta0 hat
+mean(sr_Var_beta0mat) # average of se of beta0 hat
 sqrt(var(beta1mat))
-mean(sebeta1mat)
+mean(sr_Var_beta1mat)
 
 hist(beta0mat, breaks=100)
 hist(beta1mat)
-hist(sebeta0mat)
-hist(sebeta1mat)
+hist(sr_Var_beta0mat)
+hist(sr_Var_beta1mat)
 summary(beta0mat)
 summary(beta1mat)
-summary(sebeta0mat)
+summary(sr_Var_beta0mat)
 
 
 
