@@ -141,13 +141,14 @@ sqrt(var(beta1mat))
 mean(sr_Var_beta1mat)
 
 hist(beta0mat, breaks=100)
+mean(beta0mat)
 hist(beta1mat)
-hist(sr_Var_beta0mat)
-hist(sr_Var_beta1mat)
+hist(sr_Var_beta0mat, breaks = 100)
+hist(sr_Var_beta1mat, breaks = 100)
 summary(beta0mat)
 summary(beta1mat)
 summary(sr_Var_beta0mat)
-
+summary(sr_Var_beta1mat)
 
 
 
