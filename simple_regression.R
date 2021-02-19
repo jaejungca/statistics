@@ -150,7 +150,7 @@ summary(beta1mat)
 summary(sr_Var_beta0mat)
 summary(sr_Var_beta1mat)
 
-
+ 
 
 
 
